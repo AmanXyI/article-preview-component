@@ -120,12 +120,12 @@ p {
     width: 400px;
     height: 33.5rem;
     border-radius: .8rem;
-    overflow: hidden;
 }
 .hero{
     background:url('./images/drawers.jpg') center/cover no-repeat;
     width: 100%;
     height: 210px;
+    border-radius: .8rem 0.8rem 0 0;
 }
 .text-content{
     margin: 2.5rem 2rem 2.5rem 2rem ;
@@ -186,6 +186,7 @@ p {
     height: 6rem;
     transform: translate(0,-4rem);
     z-index: -10;
+    border-radius: 0 0 .8rem .8rem;
 }
 .profile-share.active{
     z-index: 10;
@@ -201,7 +202,7 @@ p {
     background-size: 20px;
 }
 .profile-share p{
-    color: white;
+    color: var(--Grayish-Blue);
     font-size: 1rem;
     font-weight: 100;
     padding-left: 2.5rem;
@@ -212,5 +213,56 @@ p {
     width: 25px;
     height: 25px;
 }
-@media screen and (min-width:750px) {
+@media screen and (min-width:800px) {
+    .preview{
+        display: grid;
+        width: 750px;
+        height: 300px;
+        grid-template-columns: 1.4fr 2fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+        "hero text"
+        "hero profile";
+    }
+    .hero{
+        grid-area: hero;
+        height: 100%;
+        background-position-x: .05rem;
+        border-radius: .8rem 0 0 .8rem;
+
+    }
+    .text-content{
+        grid-area: text;
+        margin-bottom: -2rem;
+    }
+    .text-content p{
+        width: 360px;
+    }
+    .profile{
+        grid-area: profile;
+    }
+    .profile-share{
+        z-index: 40;
+        display: none;
+        width: 18rem;
+        height: 3rem;
+        border-radius: .6rem;
+        transform: translate(34rem,10rem);
+    }
+    .profile-share.active{
+        display:flex;
+    }
+    .profile-share::before{
+        content: '';
+        z-index: -10;
+        height: 40px;
+        width: 40px;
+        transform: translate(120px,10px) rotate(45deg);
+        position: absolute;
+        background-color: var(--Very-Dark-Grayish-Blue);
+    }
+    .share-apps{
+        width: 20px;
+        height: 20px;
+    }
 }
