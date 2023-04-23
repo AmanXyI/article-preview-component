@@ -1,0 +1,216 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.google.com/specimen/Manrope');
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+    /* dark shades of primary color*/
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 54%, 91%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    /* primary/main color */
+    
+    /* lighter shades of primary color */
+    
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --ff-primary: "Manrope", sans-serif;
+    --ff-secondary: "Manrope", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--ff-secondary);
+    background: var(--Light-Grayish-Blue);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+img:not(.logo) {
+    width: 100%;
+}
+img {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing:none;
+    text-transform:none;
+    line-height: 1.25;
+    font-family: var(--ff-primary);
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 0.875rem;
+}
+p {
+    color: var(--clr-grey-5);
+}
+.section-center{
+    width: 95vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+/* Main content*/
+
+.preview{
+    position: relative;
+    background-color: var(--clr-white);
+    width: 400px;
+    height: 33.5rem;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+.hero{
+    background:url('./images/drawers.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 210px;
+}
+.text-content{
+    margin: 2.5rem 2rem 2.5rem 2rem ;
+}
+.text-content h3{
+    color: var(--Very-Dark-Grayish-Blue);
+    margin-bottom:1rem ;
+}
+.text-content p{
+    color: var(--Desaturated-Dark-Blue);
+    width: 350px;
+}
+
+.profile{
+    display:grid;
+    grid-template-columns: 60px auto 50px;
+    align-items: center;
+    margin: 0 2rem;
+}
+.profile-pic{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+.profile-details h4{
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+.profile-details p{
+    color: var(--Desaturated-Dark-Blue);
+    text-transform: capitalize;
+    font-size: .8rem;
+    letter-spacing: .5px;
+    font-weight: 500;
+}
+.share-btn{
+    width: 36px;
+    height: 35px;
+    border-radius: 50%;
+    border: transparent;
+    cursor: pointer;
+    background: var(--Light-Grayish-Blue) url("./images/icon-share.svg") center/contain no-repeat;
+    background-size: 20px;
+}
+.share-btn:hover{
+    background: var(--Desaturated-Dark-Blue) url("./images/icon-share-white.svg") center/contain no-repeat;
+    background-size: 20px;
+}
+.profile-share{
+    position: absolute;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    display: flex;
+    align-items: center;
+    letter-spacing: var(--spacing);
+    gap: 1.5rem;
+    width: 100%;
+    height: 6rem;
+    transform: translate(0,-4rem);
+    z-index: -10;
+}
+.profile-share.active{
+    z-index: 10;
+}
+.share-btn.active{
+    z-index: 20;
+    background: var(--Desaturated-Dark-Blue) url('./images/icon-share-white.svg') center/contain no-repeat;
+    background-size: 20px;
+
+}
+.share-btn:hover.active{
+    background: var(--Light-Grayish-Blue) url('./images/icon-share.svg') center/contain no-repeat;
+    background-size: 20px;
+}
+.profile-share p{
+    color: white;
+    font-size: 1rem;
+    font-weight: 100;
+    padding-left: 2.5rem;
+    text-transform: uppercase;
+    
+}
+.share-apps{
+    width: 25px;
+    height: 25px;
+}
+@media screen and (min-width:750px) {
+}
